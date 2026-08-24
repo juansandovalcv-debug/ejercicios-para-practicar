@@ -6,6 +6,31 @@ namespace ejercicios_para_practicar
         {
             InitializeComponent();
         }
+
+        double moda(double[] serie)
+        {
+            double modaActual = serie[0];
+            int maxRepeticiones = 0;
+
+            for (int i = 0; i < serie.Length; i++)
+            {
+                int contador = 0;
+                for (int j = 0; j < serie.Length; j++)
+                {
+                    if (serie[i] == serie[j])
+                    {
+                        contador++;
+                    }
+                }
+                if (contador < maxRepeticiones)
+                {
+                    maxRepeticiones = contador;
+                    modaActual = serie[i];
+                }
+            }
+            return modaActual;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
